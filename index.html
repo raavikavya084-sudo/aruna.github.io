@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediScan - Health Care Diagnostics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">MediScan<span>+</span></div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#tests">Tests</a>
+            <a href="#appointment">Appointment</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-text">
+            <h1>Accurate Diagnostics, Trusted Care</h1>
+            <p>Book lab tests, health checkups & get reports online in 24 hours.</p>
+            <a href="#appointment" class="btn">Book Now</a>
+            <div class="search-box">
+                <input type="text" id="searchTest" placeholder="Search test e.g. Blood Test, MRI, X-Ray">
+                <button onclick="searchDiagnostic()">Search</button>
+            </div>
+        </div>
+        <img src="https://cdn-icons-png.flaticon.com/512/3774/3774294.png" alt="Doctor">
+    </section>
+
+    <section id="tests" class="services">
+        <h2>Popular Diagnostic Tests</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>Blood Test (CBC)</h3>
+                <p>Complete blood count with 20+ parameters</p>
+                <strong>Rs. 299</strong>
+                <button onclick="bookTest('Blood Test (CBC)')">Book</button>
+            </div>
+            <div class="card">
+                <h3>Diabetes - HbA1c</h3>
+                <p>3 months avg sugar control test</p>
+                <strong>Rs. 450</strong>
+                <button onclick="bookTest('Diabetes - HbA1c')">Book</button>
+            </div>
+            <div class="card">
+                <h3>Full Body Checkup</h3>
+                <p>75+ Tests including Liver, Kidney, Thyroid</p>
+                <strong>Rs. 1499</strong>
+                <button onclick="bookTest('Full Body Checkup')">Book</button>
+            </div>
+            <div class="card">
+                <h3>MRI Scan</h3>
+                <p>High accuracy MRI with expert report</p>
+                <strong>Rs. 3500</strong>
+                <button onclick="bookTest('MRI Scan')">Book</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="appointment" class="appointment">
+        <h2>Book Appointment / Lab Test</h2>
+        <form id="bookingForm">
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="tel" id="phone" placeholder="Phone Number" required>
+            <select id="testName">
+                <option value="">Select Test</option>
+                <option>Blood Test (CBC)</option>
+                <option>Diabetes - HbA1c</option>
+                <option>Full Body Checkup</option>
+                <option>MRI Scan</option>
+                <option>X-Ray / CT Scan</option>
+            </select>
+            <input type="date" id="date" required>
+            <input type="text" id="address" placeholder="Home Address for Sample Collection">
+            <button type="submit">Confirm Booking</button>
+        </form>
+        <p id="successMsg"></p>
+    </section>
+
+    <section class="report-check">
+        <h2>Check Your Report Online</h2>
+        <input type="text" id="reportId" placeholder="Enter Report ID e.g. MEDI1234">
+        <button onclick="checkReport()">View Report</button>
+        <p id="reportStatus"></p>
+    </section>
+
+    <footer id="contact">
+        <p>&copy; 2026 MediScan Diagnostics | Contact: +91 98765 43210 | Addanki, AP</p>
+    </footer>
+
+<script src="script.js"></script>
+</body>
+</html>index.html
